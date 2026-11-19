@@ -1,0 +1,29 @@
+name,description,query,id,parentId,isFolder,isProtected
+Drafts,,,0,,true,true
+Untitled Query,,"CREATE (e:MonitoringEvent {
+    eventId: ""DEMO_EVENT_001"",
+    eventType: ""TAB_SWITCH"",
+    severity: ""MEDIUM"",
+    details: ""Demonstration event for database CRUD testing"",
+    eventTime: datetime()
+})
+RETURN e;
+",1,0,false,false
+Untitled Query 1,,"MATCH (e:MonitoringEvent {
+    eventId: ""DEMO_EVENT_001""
+})
+RETURN e;",2,0,false,false
+Untitled Query 2,,"MATCH (e:MonitoringEvent {
+    eventId: ""DEMO_EVENT_001""
+})
+SET e.severity = ""HIGH"",
+    e.details = ""Updated demonstration event""
+RETURN e;",3,0,false,false
+Untitled Query 3,,"MATCH (e:MonitoringEvent {
+    eventId: ""DEMO_EVENT_001""
+})
+DELETE e;",4,0,false,false
+Untitled Query 4,,"MATCH (e:MonitoringEvent {
+    eventId: ""DEMO_EVENT_001""
+})
+RETURN e;",5,0,false,false
